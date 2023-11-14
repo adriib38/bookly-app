@@ -1,0 +1,26 @@
+{% extends "layouts/base.html" %}
+{% load i18n %}
+
+{% block title %}{% trans "Registro" %}{% endblock %}
+
+{% block content %}
+<div id="page-register">
+    <h1>{% trans "Registro" %}</h1>
+    <p>{% trans "Ingresa tus datos para crear una cuenta" %}</p>
+
+    <form action="{% url 'signup' %}" method="POST" id="registro">
+        {% csrf_token %}
+
+        {{ form.as_p }}
+
+        {% if error %}
+            <p class="auth-error">{{ error }}</p>
+        {% endif %}
+        
+        <button>{% trans "Registrarse" %}</button>
+    </form>
+
+
+    <p>{% trans "¿Ya tienes una cuenta?" %} <a href="{% url 'signin' %}">{% trans "Iniciar sesión" %}</a></p>
+</div>
+{% endblock %}

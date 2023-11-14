@@ -1,0 +1,114 @@
+{% extends "layouts/base.html" %}
+{% load static %}
+{% load i18n %}
+{% block title %}{{ user.username }}{% endblock %}
+
+{% block content %}
+
+<div id="user-perfil">
+
+    <!-- Información de perfil de usuario -->
+    <section id="user-info" class="columna">
+        <h1 id="user-info-username">
+            @<span id="username">{{ user.username }}</span>
+            {% if profile.verified %}
+                <img src="{% static 'svg/verify.svg' %}" title="Cuenta verificada">
+            {% endif %}
+            {% if profile.writer %}
+                <img src="{% static 'svg/feather.svg' %}" title="Cuenta de escritor">
+            {% endif %}
+        </h1>
+
+        {% if profile.pic %}
+            <img id="user-info-pic" src="/media/{{ profile.pic }}">
+        {% else %}
+            <img id="user-info-pic" src="/media/myapp/static/imgs/profiles/default.png">
+        {% endif %}
+
+
+
+        <h3><i>{{ user.first_name }} {{ user.last_name }}</i></h3>
+
+        <!-- Si el usuario logueado es el que se está viendo, se muestra el botón de editar perfil, si no, se muestra el botón de seguir o dejar de seguir -->
+        {% if user != request.user %}
+            <a href="{% url 'followOrUnfollow' user.username %}" id="btn-follow" class="{% if seguido %}no-follow{% else %}follow{% endif %}">
+                {% if seguido %}
+                    {% trans "Dejar de seguir" %}
+                {% else %}
+                    {% trans "Seguir" %}
+                {% endif %}
+            </a>
+        {% else %}
+            <section>
+                <a href="{% url 'followers' user.username %}">{% trans "Seguidores" %}</a>
+                <a href="{% url 'edituser' %}">{% trans "Editar perfil" %}</a>
+            </section>
+        {% endif %}
+
+        <p>{{ profile.bio }}</p>
+        <p><img src="{% static 'svg/location.svg' %}"> {{ profile.location }}</p>
+        <p class="display-flex"><a href="mailto:{{ user.email }}">{{ user.email }}</a></p>
+        <p id="fecha-union" class="gris">{% trans "Se unió el" %} {{ user.date_joined|date:"d/m/Y" }}</p>
+
+    
+
+        <!-- Grupos a los que pertenece el usuario -->
+        <section id="box-grupos-perfil">
+            {% if groups %}
+                <h3>{% trans "Grupos" %}</h3>
+            {% endif %}
+            <ul>
+                {% for grupo in groups %}
+                    <li><a href="{% url 'group' grupo.id %}">{{ grupo.name }}</a></li>
+                {% endfor %}
+            </ul>
+        </section>
+
+        <!-- Libros de los que el usuario del perfil es autor -->
+        <section id="box-libros-autor"> 
+        </section>
+
+    </section>
+
+    <!-- Posts del usuario -->
+    <section id="posts-usuario" class="columna">
+        <article class="placeholder post">
+                
+        </article>
+        <article class="placeholder post">
+            
+        </article>
+        <article class="placeholder post">
+            
+        </article>
+        <article class="placeholder post">
+            
+        </article>
+    </section>
+    
+    <!-- Cuadro aside listas de usuario -->
+    <aside id="aside-listas-perfil" class="right">
+        <h2 id="aside-listas-titulo"><i class="fas fa-book"></i> {% trans "Listas" %}</h2>
+        <div id="div-listas">
+            <h3>{% trans "Leídos" %}</h3>
+            <ul id="ul-lista-leidos">
+                <li class="placeholder"></li>
+                <li class="placeholder"></li>
+            </ul>
+            <h3>{% trans "Leyendo" %}</h3>
+            <ul id="ul-lista-leyendo">
+                <li class="placeholder"></li>
+                <li class="placeholder"></li>
+            </ul>
+            <h3>{% trans "Por leer" %}</h3>
+            <ul id="ul-lista-por-leer">
+                <li class="placeholder"></li>
+                <li class="placeholder"></li>
+            </ul>
+        </div>
+    </aside>
+</div>
+
+<script type="module" src="{% static 'js/user.js' %}"></script>
+
+{% endblock %}

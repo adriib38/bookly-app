@@ -1,0 +1,37 @@
+{% extends "layouts/base.html" %}
+{% load static %}
+{% load i18n %}
+{% block title %}{% trans "Grupos" %}{% endblock %}
+{% block content %}
+<div class="centrado">
+    <h1 class="display-2 ">{% trans "Grupos" %}</h1>
+    <p>{% trans "Unete a una comunidad de personas con tus mismos intereses que tu." %}</p>
+
+    <div class="alert alert-warning">
+    
+        {% trans "Al unirte a uno de los grupos estaras aceptando las" %}<a href="{% url 'reglas' %}">{% trans "reglas de los grupos" %}</a> {% trans "de Bookly" %}
+    </div>
+
+    <section id="box-grupos">
+        {% for grupo in grupos %}
+            <article class="grupo">
+                {% if grupo.image %}
+                    <img class="grupo-img" src="{{ grupo.image.url }}" alt="Imagen del grupo {{ grupo.name }}">
+                {% else %}
+                    <img class="grupo-img" src="{% static 'imgs/groups/banner-colors.png' %}" alt="Imagen del grupo {{ grupo.name }}">
+                {% endif %}
+                <h2 class="grupo-titulo">{{ grupo.name }}</h2>
+                <p class="grupo-descripcion">{{ grupo.description }}</p>
+                <p class="grupo-miembros">{% trans "Miembros:" %} {{ grupo.numMembers }}</p>
+                <!-- Si es miembro -->
+                {% if grupo.isMember %}
+                    <a href="{% url 'group' grupo.id %}" class="grupo-enlace">{% trans "Ver grupos" %}</a>
+                {% else %}
+                    <a href="{% url 'joinOrLeaveGroup' grupo.id %}" class="grupo-enlace">{% trans "+ Unirme" %}</a>
+                {% endif %}
+            </article>
+        {% endfor %}
+    </section>
+</div>
+
+{% endblock %}

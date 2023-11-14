@@ -1,0 +1,65 @@
+{% extends "layouts/base.html" %}
+{% load static %}
+{% load i18n %}
+{% block title %}{% trans "Ranking" %}{% endblock %}
+
+{% block content %}
+
+<div class="centrado">
+    <h1 class="display-2 underline-amarillo">{% trans "Ranking" %}</h1>
+    <h2>{% trans "Usuarios con más reseñas" %}</h2>
+    <section id="section-ranking-resenyas">
+        {% for user in ranking_resenyas %}
+            <article>
+                <span class="section-ranking-posicion posicion-{{ forloop.counter }}">
+                    {% if forloop.counter == 1 %}
+                        <img src="{% static 'svg/trophy1.svg' %}" alt="" class="">
+                    {% elif forloop.counter == 2 %}
+                        <img src="{% static 'svg/trophy2.svg' %}" alt="" class="">
+                    {% elif forloop.counter == 3 %}
+                        <img src="{% static 'svg/trophy3.svg' %}" alt="" class="">
+                    {% endif %}
+                </span>
+                <span class="section-ranking-nombre-usuario">
+                    <a href="{% url 'user' user.user__username %}">
+                        @{{ user.user__username }}
+                    </a> 
+                </span>
+                <span class="section-ranking-numero-resenyas">
+                    {{ user.num_resenias }}
+                    {% trans "reseñas" %}
+                </span>
+            </article>
+        {% endfor %}
+    </section>
+
+    <h2>{% trans "Usuarios con más libros leidos" %}</h2>
+    <section id="section-ranking-libros">
+        {% for user in ranking_libros_leidos %}
+            <article>
+                <span class="section-ranking-posicion posicion-{{ forloop.counter }}">
+                    {% if forloop.counter == 1 %}
+                        <img src="{% static 'svg/trophy1.svg' %}" alt="" class="">
+                    {% elif forloop.counter == 2 %}
+                        <img src="{% static 'svg/trophy2.svg' %}" alt="" class="">
+                    {% elif forloop.counter == 3 %}
+                        <img src="{% static 'svg/trophy3.svg' %}" alt="" class="">
+                    {% endif %}
+                </span>
+                <span class="section-ranking-nombre-usuario">
+                    <a href="{% url 'user' user.user__username %}">
+                        @{{ user.user__username }}
+                    </a> 
+                </span>
+                <span class="section-ranking-numero-resenyas">
+                    {{ user.num_books_read }}
+                    {% trans "leídos" %}
+                </span>
+            </article>
+
+        {% endfor %}
+    </section>
+</div>
+        
+{% endblock %}
+

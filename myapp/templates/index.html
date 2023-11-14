@@ -1,0 +1,80 @@
+{% extends "layouts/base.html" %}
+{% load static %}
+{% load i18n %}
+{% block title %}{% trans "Bookly: aplicación web para aficionados a la lectura." %}{% endblock %}
+
+{% block content %}
+
+    <aside id="aside-grupos" class="left mg-top-100">
+        <h2 id="aside-grupos-titulo"><i class="fas fa-users"></i> {% trans "Grupos" %}</h2>
+        <ul id="ul-grupos">
+            <li class="placeholder"></li>
+            <li class="placeholder"></li>
+            <li class="placeholder"></li>
+            <li class="placeholder"></li>
+        </ul>
+        <a href="/grupos">{% trans "Ver todos" %}</a>
+    </aside>
+    
+    <!-- Cuadro aside listas de usuario -->
+    <aside id="aside-listas" class="right mg-top-100">
+        <h2 id="aside-listas-titulo"><i class="fas fa-book"></i> {% trans "Listas" %}</h2>
+        <div id="div-listas">
+            <h3>{% trans "Leídos" %}</h3>
+            <ul id="ul-lista-leidos">
+                <li class="placeholder"></li>
+                <li class="placeholder"></li>
+            </ul>
+            <h3>{% trans "Leyendo" %}</h3>
+            <ul id="ul-lista-leyendo">
+                <li class="placeholder"></li>
+                <li class="placeholder"></li>
+            </ul>
+            <h3>{% trans "Por leer" %}</h3>
+            <ul id="ul-lista-por-leer">
+                <li class="placeholder"></li>
+                <li class="placeholder"></li>
+            </ul>
+        </div>
+    </aside>
+
+    <div class="centrado">
+        <!-- Texto bienvenida -->
+        <h1 id="bienvenida" class="display-3">
+            {% trans "Bienvenido" %} @<span id="username">{{ user.username }}</span>
+        </h1>
+
+        <!-- Hastags trending -->
+        <div id="hashtags-trending" title="Hsahtags trending">
+            <span class="circle-red"></span>
+            {% if popular_hashtags|length == 0 %}
+                <span>{% trans "No hay tendencias por ahora."%}</span>
+            {% else %}
+                {% for hashtag in popular_hashtags %}
+                    <a href="/hashtag/{{ hashtag.0 }}">#{{ hashtag.0 }}</a>
+                {% endfor %}
+            {% endif %}
+        </div>
+
+        <div id="div-nuevo-post-container">
+            <div id="box-feedback"></div>
+            {% csrf_token %}
+            <div id="div-nuevo-post">
+                <textarea type="text" id="contenido-post" name="contenido" placeholder="{% trans "¿Que estás pensando?" %}"></textarea>
+                <button id="btn-emojis" class="far fa-smile"></button>
+                <div id="box-emojis"></div>
+            </div>            
+            <input type="button" id="enviar-post" value="Enviar">
+        </div>
+
+        <section id="muro">
+            <article class="placeholder post"></article>
+            <article class="placeholder post"></article>
+            <article class="placeholder post"></article>
+            <article class="placeholder post"></article>
+        </section>
+    </div>
+    
+    <script type="module" src="{% static 'js/index.js' %}"></script>
+
+{% endblock %}

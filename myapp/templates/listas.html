@@ -1,0 +1,62 @@
+{% extends "layouts/base.html" %}
+{% load static %}
+{% load i18n %}
+{% block title %}{% trans "Mis listas" %}{% endblock %}
+
+{% block content %}
+<h1 class="titulo">{% trans "Tus listas" %}, @<span id="username">{{ user.username }}</span></h1>
+<div id="listas-libros" class="lista-redonda floats">
+    <div class="column">
+        <section id="section-listas-libros" class="column-content">
+            <article>
+                <h2>{% trans "Por leer" %}</h2>
+                <ul>
+                    <li>
+                        <p class="placeholder"></p>
+                    </li>
+                    <li>
+                        <p class="placeholder"></p>
+                    </li>
+                    <li>
+                        <p class="placeholder"></p>
+                    </li>
+                </ul>
+            </article>
+
+            <article>
+                <h2>{% trans "Leidos" %}</h2>
+                <ul>
+                    <li>
+                        <p class="placeholder"></p>
+                    </li>
+                    <li>
+                        <p class="placeholder"></p>
+                    </li>
+                    <li>
+                        <p class="placeholder"></p>
+                    </li>
+                </ul>
+            </article>
+
+            <article>
+                <h2>{% trans "Leyendo" %}</h2>
+                <ul>
+                    <li>
+                        <p class="placeholder"></p>
+                    </li>
+                    <li>
+                        <p class="placeholder"></p>
+                    </li>
+                    <li>
+                        <p class="placeholder"></p>
+                    </li>
+                </ul>
+            </article>
+        </section>
+    </div>
+</div>
+
+
+<script type="module" src="{% static 'js/listas.js' %}"></script>
+
+{% endblock %}

@@ -1,0 +1,97 @@
+{% extends "layouts/base.html" %}
+{% load static %}
+{% load i18n %}
+{% block title %}{% trans "Libro" %}{% endblock %}
+
+{% block content %}
+
+<div>
+    <div id="box-libro">
+        <img id="libro-portada" class="placeholder">
+        <div id="box-libro-info">
+            <h1 id="libro-titulo" class="placeholder"></h1>
+            <p id="libro-autor" class="placeholder"></p>
+            <p id="libro-descripcion" class="placeholder"></p>
+
+        </div>
+   
+        <div id="listas-lista" class="lista-redonda fadeInUp">
+            <div class="column">
+                <section class="column-content">
+                    <h2>{% trans "Agregar a tus listas" %}</h2>
+                    <ul>
+                        <li>
+                            <!-- addOrRemoveBook -->
+                            <form action="{% url 'addOrRemoveBook' %}" method="POST">
+                                {% csrf_token %}
+                                <input type="hidden" name="csrfmiddlewaretoken" value="{{ csrf_token }}">
+                                <input type="hidden" name="libro_id" value="{{ id }}">
+                                <input type="hidden" name="lista" value="por_leer">
+                                {% if libro_en_por_leer %}
+                                    <input id="input-por_leer-submit" class="input-submit-list" type="submit" value="{% trans "- Por leer" %}">
+                                {% else %}
+                                    <input id="input-por_leer-submit" class="input-submit-list" type="submit" value="{% trans "+ Por leer" %}">
+                                {% endif %}
+                            </form>
+                        </li>
+                        <li>
+                            <form action="{% url 'addOrRemoveBook' %}" method="POST">
+                                <input type="hidden" name="csrfmiddlewaretoken" value="{{ csrf_token }}">
+                                <input type="hidden" name="libro_id" value="{{ id }}">
+                                <input type="hidden" name="lista" value="leyendo">
+                                {% if libro_en_leyendo %}
+                                    <input id="input-leyendo-submit" class="input-submit-list" type="submit" value="{% trans "- Leyendo" %}">
+                                {% else %}
+                                    <input id="input-leyendo-submit" class="input-submit-list" type="submit" value="{% trans "+ Leyendo" %}">
+                                {% endif %}
+                            </form>
+                        </li>
+                        <li>
+                            <form action="{% url 'addOrRemoveBook' %}" method="POST">
+                                <input type="hidden" name="csrfmiddlewaretoken" value="{{ csrf_token }}">
+                                <input type="hidden" name="libro_id" value="{{ id }}">
+                                <input type="hidden" name="lista" value="leidos">
+                                {% if libro_en_leidos %}
+                                    <input id="input-leido-submit" class="input-submit-list"  type="submit" value="{% trans "- Leído" %}">
+                                {% else %}
+                                    <input id="input-leido-submit" class="input-submit-list"  type="submit" value="{% trans "+ Leído" %}">
+                                {% endif %}
+                            </form>
+                        </li>
+                    </ul>
+                </section>
+            </div>
+        </div>
+    </div>
+
+    <div class="linea-separador mg-100"></div>
+
+    <h2>{% trans "Reseñas de usuarios" %}</h2>
+    <form id="formulario-resenya" action="">
+        <div class="rate">
+            <input type="radio" id="star5" name="rate" value="5" />
+            <label for="star5" title="text">5 stars</label>
+            <input type="radio" id="star4" name="rate" value="4" />
+            <label for="star4" title="text">4 stars</label>
+            <input type="radio" id="star3" name="rate" value="3" />
+            <label for="star3" title="text">3 stars</label>
+            <input type="radio" id="star2" name="rate" value="2" />
+            <label for="star2" title="text">2 stars</label>
+            <input type="radio" id="star1" name="rate" value="1" />
+            <label for="star1" title="text">1 star</label>
+        </div>
+        <textarea id="resenya-contenido" placeholder="Escribe tu reseña"></textarea>
+        <button type="button" id="resenya-enviar" class="btn btn-primario">{% trans "Enviar" %}</button>
+        <div id="box-feedback"></div>
+    </form>
+    <section id="box-resenyas">
+        <article class="placeholder"></article>
+        <article class="placeholder"></article>
+        <article class="placeholder"></article>
+    </section>
+</div>
+
+   
+<script type="module" src="{% static 'js/libro.js' %}"></script>
+
+{% endblock %}

@@ -1,0 +1,110 @@
+{% extends "layouts/base.html" %}
+{% load static %}
+{% load i18n %}
+{% block title %}{% trans "Editar perfil" %}{% endblock %}
+
+{% block content %}
+
+<h1><i class="fas fa-user-edit"></i> Editar perfil</h1>
+<h2>@<span id="username">{{ user.username }}</span></h2>
+
+<form action="{% url 'edituser' %}" method="POST" id="form-user" enctype="multipart/form-data">
+    {% csrf_token %}
+
+    <p>
+        {{ form.username.label_tag }}
+        {{ form.username }}
+        <br>
+        {{ form.username.help_text }}
+    </p>
+
+    <p>
+        {{ form.first_name.label_tag }}
+        {{ form.first_name }}
+        <br>
+        {{ form.first_name.help_text }}
+    </p>
+
+    <p>
+        {{ form.email.label_tag }}
+        {{ form.email }}
+    </p>
+
+    <p>
+        {{ form.bio.label_tag }}
+        {{ form.bio }}
+    </p>
+
+    <p>
+        {{ form.pic.label_tag }}
+        {{ form.pic }}
+    </p>
+
+
+
+    <p>
+        {{ form.location.label_tag }}
+        {{ form.location }}
+    </p>
+
+    <p>
+        {{ error }}
+    </p>
+
+    <p>
+        {{ form.error }}
+    </p>
+
+    <p>
+        <span>{{ mensaje }}</span>
+    </p>
+
+    <button id="btn-guardar" class="bg-verde">{% trans "Guardar" %}</button>
+</form>
+
+<section id="box-settings">
+
+    <article>
+        <h2>{% trans "Cambiar contraseña" %}</h2>
+        <a href="{% url 'ChangePassword' %}">{% trans "Formulario cambiar contraseña" %}</a>
+    </article>
+
+    <article>
+        <h2>{% trans "Solicitar perfil de escritor" %}</h2>
+        <p>{% trans "Revisaremos tu perfil para ver si cumples con los requisitos" %}</p>
+        <p>{% trans "Las ventajas del perfil de escritor son:" %}</p>
+        <ul>
+            <li>{% trans "Poder añadir tus libros a tu perfil." %}</li>
+            <li>{% trans "Promoción de tus libros en la web." %}</li>
+            <li>{% trans "Mejor soporte tecnico." %}</li>
+        </ul>
+        <br>
+        <button id="solicitud-escritor">{% trans "Solicitar" %}</button>
+    </article>
+
+    <article>
+        <div style="display: block ruby;">
+            <h2>Tema</h2> <span class="badge">Beta</span>
+        </div>
+
+        <button id="toggle-dark-mode">{% trans "Noche/día" %}</button>
+    </article>
+
+    <article>
+        <h2>{% trans "Eliminar cuenta" %}</h2>
+        <div class="alert alert-warning">{% trans "¡Cuidado! Tu cuenta será eliminada de forma irreversible" %} </div>
+        <button id="eliminar-cuenta" class="bg-rojo">{% trans "Eliminar cuenta" %}</button>
+    </article>
+
+</section>
+
+<script src="{% static 'js/edituser.js' %}"></script>
+
+{% endblock %}
+
+{% block footer %}
+    
+{% endblock %}
+
+
+ 

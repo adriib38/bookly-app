@@ -1,0 +1,38 @@
+{% extends "layouts/base.html" %}
+{% load static %}
+{% load i18n %}
+
+{% block title %}{% trans "Notificaciones" %}{% endblock %}
+
+{% block content %}
+
+<section class="centrado">
+    <h1>{% trans "Notificaciones" %} ({{ notificaciones.count }})</h1>
+
+    <!--
+        Type 1: Mention
+        Type 2: Comment
+        Type 3: Follow
+    -->
+
+    {% for notification in notificaciones %}
+        <article>
+            {% if notification.notification_type == 1 %}
+                <a href="{% url 'post' notification.post.pk %}">
+                    <strong>{{ notification.from_user.username }}</strong> {% trans "te ha mencionado" %}
+                </a>
+            {% elif notification.notification_type == 2 %}
+                <a href="{% url 'post' notification.post.pk %}">
+                    <strong>{{ notification.from_user.username }}</strong> {% trans "ha comentado tu publicación" %}
+                </a>
+            {% elif notification.notification_type == 3 %}
+                <a href="{% url 'user' notification.from_user.username %}">
+                    <strong>{{ notification.from_user.username }}</strong> {% trans "te ha seguido" %}
+                </a>
+            {% endif %}
+        </article>
+    {% endfor %}
+            
+</section>
+
+{% endblock %}

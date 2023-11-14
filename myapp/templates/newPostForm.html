@@ -1,0 +1,32 @@
+{% extends "layouts/base.html" %}
+{% load static %}
+{% load i18n %}
+{% block title %}{% trans "Nuevo post" %}{% endblock %}
+
+{% block content %}
+<div class="centrado">
+    
+    <h1 id="bienvenida" class="display-3">
+        {% trans "Nuevo post" %} <span id="username">{{ user.username }}</span>
+    </h1>
+    <div>
+        <div id="box-feedback"></div>
+        {% csrf_token %}
+        <select id="select-grupo-post">
+            
+        </select>
+        <div id="div-nuevo-post">
+            <textarea type="text" id="contenido-post" name="contenido" placeholder="{% trans "¿Que estás pensando?" %}"></textarea>
+            <button id="btn-emojis" class="far fa-smile"></button>
+            <div id="box-emojis"></div>
+        </div>
+        <input type="button" id="enviar-post" value="Enviar">
+    </div>
+
+</div>
+
+<script type="module" src="{% static 'js/newPostForm.js' %}"></script>
+
+
+
+{% endblock %}

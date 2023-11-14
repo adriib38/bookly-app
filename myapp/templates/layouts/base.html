@@ -1,0 +1,147 @@
+{% load static %}
+{% load i18n %}
+
+{% load custom_tags %}
+<!DOCTYPE html>
+<html lang="es">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>{% block title %}{% endblock %}</title>
+
+    <link rel="stylesheet" href="{% static '/styles/night.css' %}">
+    <link rel="stylesheet" href="{% static '/styles/style.css' %}">
+
+    <link rel="stylesheet" href="{% static '/styles/normalize.css' %}">
+
+    <!-- Favicon -->
+    <link rel="icon" href="{% static '/imgs/favicon.png' %}" type="image/png">
+
+    <!-- Sweetalert -->
+    <link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/sweetalert2@10.16.6/dist/sweetalert2.min.css">
+    <script src="https://cdn.jsdelivr.net/npm/sweetalert2@10.16.6/dist/sweetalert2.min.js"></script>
+
+    <!-- Awesome Fonts -->
+    <script src="https://kit.fontawesome.com/1f24acb069.js" crossorigin="anonymous"></script>
+    <link rel="stylesheet" href="https://use.fontawesome.com/releases/v5.5.0/css/all.css">
+
+    <!-- Emoji-Mart (Picker de emojis) -->
+    <script src="https://cdn.jsdelivr.net/npm/emoji-mart@latest/dist/browser.js"></script>
+
+    <!-- Metatags -->
+    <!-- Primary Meta Tags -->
+    <meta name="title" content="Bookly: Aplicación web para aficionados a la lectura">
+    <meta name="description"
+        content="Descubre y comparte con otros lectores y escritores. Encuentra tu proxima lectura en Bookly.">
+
+    <!-- Open Graph / Facebook -->
+    <meta property="og:type" content="website">
+    <meta property="og:url" content="https://metatags.io/">
+    <meta property="og:title" content="Bookly: Aplicación web para aficionados a la lectura">
+    <meta property="og:description" content="Descubre y comparte con otros lectores y escritores. Encuentra tu proxima lectura en Bookly.">
+    <meta property="og:image" content="https://metatags.io/assets/meta-tags-16a33a6a8531e519cc0936fbba0ad904e52d35f34a46c97a2c9f6f7dd7d336f2.png">
+
+    <!-- Twitter -->
+    <meta property="twitter:card" content="summary_large_image">
+    <meta property="twitter:url" content="https://metatags.io/">
+    <meta property="twitter:title" content="Bookly: Aplicación web para aficionados a la lectura">
+    <meta property="twitter:description"
+        content="Descubre y comparte con otros lectores y escritores. Encuentra tu proxima lectura en Bookly.">
+    <meta property="twitter:image"
+        content="https://metatags.io/assets/meta-tags-16a33a6a8531e519cc0936fbba0ad904e52d35f34a46c97a2c9f6f7dd7d336f2.png">
+</head>
+<body>
+    <nav>
+        <input type="checkbox" id="toggle-menu">
+        <label for="toggle-menu" class="toggle-button">☰</label>
+        <div class="logo">
+            <a href="{% url 'index' %}" class="logo"><img src="{% static '/imgs/bookly.png' %}" alt="Bookly"></a>
+        </div>
+
+        <ul class="navbar-links" id="menu-content">
+            {% if user.is_authenticated %}
+            <li>
+                <form method="get" action="{% url 'search' %}">
+                    <input type="text" id="input-busqueda" name="q" placeholder="Buscar" required/>
+                    <button id="btn-busqueda" type="submit"><i class="fa-solid fa-search"></i></button>
+                </form>
+            </li>
+
+            <li class="item-menu"><a href="{% url 'explore' %}">{% trans "Explorar" %}</a></li>
+
+            <li class="item-menu"><a href="{% url 'groups' %}">{% trans "Grupos" %}</a></li>
+
+
+            <div id="div-sub-menus">
+                <li class="item-menu-sub-menu">
+                    <a href="{% url 'user' user.username %}" class="item-menu-link">
+                        <i class="fa-solid fa-user"></i>
+                        <i class="fas fa-angle-down angle-view-sub-menu"></i>
+                    </a>
+
+                    <ul class="sub-menu cuenta">
+                        <li class="item-sub-menu">
+                            <a href="{% url 'newPostForm' %}" class="item-menu-link">
+                                <i class="fa-solid fa-plus"></i>
+                                {%trans "Nuevo" %}</a>
+                        </li>
+                        <li class="item-sub-menu">
+                            <a href="{% url 'user' user.username %}" class="item-menu-link">{% trans "Perfil" %}</a>
+                        </li>
+                        <li class="item-sub-menu">
+                            <a href="{% url 'followers' user.username %}" class="item-menu-link">{% trans "Seguidos" %}</a>
+                        </li>
+                        <li>
+                            <a href="{% url 'lists' user.username %}" class="item-menu-link">{% trans "Mis listas" %}</a>
+                        </li>
+                        <li class="item-sub-menu">
+                            <a href="{% url 'edituser' %}" class="item-menu-link">{% trans "Editar perfil" %}</a>
+                        </li>
+                        <hr>
+                        <li>
+                            <a href="{% url 'ranking' %}" class="item-menu-link">{% trans "Ranking" %}</a>
+                        </li>
+                        <li>
+                            <a href="{% url 'blog' %}" class="item-menu-link">{% trans "Blog" %}</a>
+                        </li>
+                        <li class="item-menu" class="signout"><a href="{% url 'signout' %}">{% trans "Cerrar sesión" %}</a>
+                        </li>
+                    </ul>
+                </li>
+
+                <li class="item-menu-sub-menu">
+                    <a href="{% url 'notifications' %}" class="item-menu-link">
+                        <i class="fa-solid fa-bell"></i>
+                        <i class="fas fa-angle-down angle-view-sub-menu"></i>
+                    </a>
+
+                    <ul class="sub-menu notificaciones" id="sub-menu">
+                        {% show_notifications %}
+                    </ul>
+                </li>
+            </div>
+            {% endif %}
+
+            {% if not user.is_authenticated %}
+            <li><a href="{% url 'signup' %}">{% trans "Registrarse" %}</a></li>
+            <li><a href="{% url 'signin' %}">{% trans "Iniciar sesión" %}</a></li>
+            {% endif %}
+        </ul>
+    </nav>
+
+    <main>
+        {% block content %}
+
+        {% endblock %}
+    </main>
+
+    {% block footer %}
+    {% include 'layouts/footer.html' %}
+    {% endblock %}
+
+
+    <script src="{% static 'js/dark-mode.js' %}"></script>
+</body>
+
+</html>

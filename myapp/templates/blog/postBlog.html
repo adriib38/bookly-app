@@ -1,0 +1,25 @@
+{% extends "layouts/base.html" %}
+{% load static %}
+{% load i18n %}
+{% block title %}Blog{% endblock %}
+
+{% block content %}
+
+<div id="blog-post-pagina">
+    <a href="{% url 'blog' %}"> <i class="fas fa-arrow-left"></i></a>
+    <h1 class="centrado"><i>{{ blogpost.title }}</i></h1>
+    
+    {% if blogpost.image %}
+        <div class="centrado">
+            <img src="{{ blogpost.image.url }}" alt="Imagen del post" width="40%"> 
+        </div>
+    {% endif %}
+
+    <span class="centrado">{{ blogpost.created_at.date }}</span> 
+
+    <div id="blog-post-contenido">
+        {{ blogpost.content | safe }}
+        {{ blogpost.author }}
+    </div>
+</div>
+{% endblock %}

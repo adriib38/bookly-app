@@ -1,0 +1,40 @@
+{% extends "layouts/base.html" %}
+{% load static %}
+{% load i18n %}
+{% block title %}{% trans "Busqueda" %}{% endblock %}
+
+{% block content %}
+<div class="padding-l-r-130">
+    <h1>Busqueda: <span id="query">{{ query }}</span></h1>
+
+    <div class="tab">
+        <button id="libros-btn" class="tablinks active">Libros</button>
+        <button id="usuarios-btn" class="tablinks">Usuarios</button>
+        <button id="posts-btn" class="tablinks">Posts</button>
+    </div>
+        
+    <section id="box-libros-busqueda" class="tabcontent"><div class="spinner"></div></section>
+    <section id="box-usuarios-busqueda" class="tabcontent"></section>
+    <section id="box-muro-busqueda" class="tabcontent"></section>
+</div>
+
+<!--
+    <h1>Busqueda: <span id="query">{{ query }}</span></h1>
+
+    <div class="centrado">
+
+        <section id="box-libros-busqueda">
+
+        </section>
+
+        <section id="box-usuarios-busqueda">
+            
+        </section>
+
+        <section id="muro">
+          
+        </section>
+    </div>
+-->
+    <script type="module" src="{% static '/js/Busqueda.js' %}"></script>
+{% endblock %}

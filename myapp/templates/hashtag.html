@@ -1,0 +1,28 @@
+{% extends "layouts/base.html" %}
+{% load static %}
+{% load i18n %}
+{% block title %}#{{ hashtag }}{% endblock %}
+
+{% block content %}
+    <h1>#{{ hashtag }}</h1>
+
+    <div class="centrado">
+        <section id="muro">
+            <article class="placeholder post">
+                
+            </article>
+            <article class="placeholder post">
+                
+            </article>
+            <article class="placeholder post">
+                
+            </article>
+            <article class="placeholder post">
+                
+            </article>            
+        </section>
+    </div>
+
+    <script type="module" src="{% static 'js/hashtag.js' %}"></script>
+
+{% endblock %}

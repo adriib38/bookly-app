@@ -1,0 +1,67 @@
+{% extends "layouts/base.html" %}
+{% load static %}
+{% load i18n %}
+{% block title %}Post{% endblock %}
+
+{% block content %}
+<div class="centrado">
+    <article id="post" class="post">
+        <h3 class="post-user">
+            <a href="/user/{{ post.user.username }}">@{{ post.user.username }}</a>
+            {% if post.user.profile.verified %}
+                <img src="{% static 'svg/verify.svg' %}" alt="Mi imagen SVG">
+            {% endif %}
+        </h3>
+        <p class="post-contenido">{{ post.content }}</p>
+        <span class="post-fecha">{{ post.created_at }}</span>
+        <span class="linea-separador"></span>
+        <div class="post-acciones">
+            <a href="">
+                <i class="fas fa-share"></i>
+                {{ post.num_comments }}
+            </a>
+            {% if post.is_owner %}
+                <a href="{% url 'deletepost' post.id %}" class="post-eliminar">
+                    <i class="fas fa-trash"></i>
+                </a>
+            {% endif %}
+        </div>
+    </article>
+
+    <section id="comentarios">
+        <h2>{% trans "Comentarios" %}</h2>
+        <form action="{% url 'newcomment' post.id %}" method="POST">
+            {% csrf_token %}
+            <textarea type="text" id="contenido-comentario" name="contenido" placeholder="{% trans "Escribe un comentrio" %}"></textarea>
+            <input type="submit" id="enviar-comentario" value="Enviar">
+        </form>
+
+    {% for comment in comments %}
+        <article class="comentario">
+            <h3 class="comentario-user">
+                <a href="/user/{{ comment.user.username }}">@{{ comment.user.username }}</a>
+                {% if comment.user.profile.verified %}
+                    <img src="{% static 'svg/verify.svg' %}" alt="Mi imagen SVG">
+                {% endif %}
+            </h3>
+            <p class="comentario-contenido">{{ comment.content }}</p>
+            <span class="fecha">{{ post.created_at }}</span>
+            <span class="linea-separador"></span>
+            <div class="comentario-acciones">
+                {% if comment.is_owner %}
+                    <a href="{% url 'deletecomment' comment.id %}" class="comentario-eliminar">
+                        <i class="fas fa-trash"></i>
+                    </a>
+                {% endif %}
+            </div>
+        </article>
+    {% endfor %}
+       
+    </section>
+
+</div>
+
+<script type="module" src="{% static 'js/post.js' %}"></script>
+
+
+{% endblock %}

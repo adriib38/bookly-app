@@ -1,0 +1,36 @@
+{% extends "layouts/base.html" %}
+
+{% load static %}
+{% load i18n %}
+
+{% block title %}{% trans "Bookly: aplicación web para aficionados a la lectura." %}{% endblock %}
+
+{% block content %}
+<div id="indexNoAuth">
+    <h1 class="display-1 bg-hover-verde">{% trans "Libros, escritores y lectores, <br> en un mismo sitio."%}</h1>
+
+    <section id="comienza-a">
+        <article>
+            <h3>{% trans "Compartir y descubrir" %}</h3>
+            <p>{% trans "tus proximas aventuras." %}</p>
+        </article>
+        <article>
+            <h3>{% trans "Conocer" %}</h3>
+            <p>{% trans "a tus escritores y escritoras favoritos." %}</p>
+        </article>
+        <article>
+            <h3>{% trans "Unirte" %}</h3>
+            <p>{% trans "a grupos tematicos con otros usuarios." %}</p>
+        </article>
+    </section>
+
+    <hr class="mg-100">
+
+    <h2 class="display-2 underline-azul bg-hover-azul">Bookly Blog</h2>
+    <section id="box-blog-posts">
+    </section>
+</div>
+
+<script type="module" src="{% static 'js/indexNoAuth.js' %}"></script>
+
+{% endblock %}

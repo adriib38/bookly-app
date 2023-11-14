@@ -1,0 +1,53 @@
+{% extends "layouts/base.html" %}
+{% load static %}
+{% load i18n %}
+{% block title %}Seguidores de {{ user.username }}{% endblock %}
+
+{% block content %}
+<h1>{% trans "Seguidores" %} @{{ user.username }}</h1>
+<h3>{% trans "Solo tu puedes ver esta página" %}</h3>
+    <div id="seguidores-lista" class="lista-redonda floats">
+        <div class="column">
+            <section id="seguidores" class="column-content">
+                <h2>{% trans "Seguidores:" %} {{ seguidores|length }}</h2>
+                <ul>
+                    {% if seguidores|length == 0 %}
+                        <li>
+                            {% trans "Este usuario no tiene seguidores." %}
+                        </li>
+                    {% endif %}
+
+                    {% for usuario in seguidores %}
+                        <li>
+                            <a href="{% url 'user' usuario.username %}">@{{ usuario.username }}</a>
+                        </li>
+                    {% endfor %}
+                </ul>
+            </section>
+        </div>
+
+        <div id="seguidos-lista" class="lista-redonda column">
+            <section id="seguidos" class="column-content">
+                <h2>{% trans "Seguidos:" %} {{ seguidos|length }}</h2>
+                <ul>
+                    {% if seguidos|length == 0 %}
+                        <li>
+                            <p>{% trans "Este usuario no sigue a nadie" %}</p>
+                        </li>
+                    {% endif %}
+
+                    {% for usuario in seguidos %}
+                        <li>
+                            <a href="{% url 'user' usuario.username %}">@{{ usuario.username }}</a>
+
+                            <a href="{% url 'followOrUnfollow' usuario.username %}">{% trans "Dejar de seguir" %}</a>
+                        </li>
+                    {% endfor %}
+                </ul>
+            </section>
+        </div>
+    </div>
+
+
+
+{% endblock %}

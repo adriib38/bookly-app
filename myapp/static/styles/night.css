@@ -1,0 +1,97 @@
+.dark-mode { background-color: #20252C; }
+
+.dark-mode h1,
+.dark-mode h2,
+.dark-mode h3,
+.dark-mode h4,
+.dark-mode h5,
+.dark-mode h6,
+.dark-mode p,
+.dark-mode a,
+.dark-mode span,
+.dark-mode label,
+.dark-mode ul,
+.dark-mode li,
+.dark-mode .display-1,
+.dark-mode .display-2,
+.dark-mode .display-3 {
+    color: #fff;
+}
+
+.dark-mode .comentario,
+.dark-mode .comentario div a,
+.dark-mode .post,
+.dark-mode .post div a {
+    background-color: #333;
+    color: #fff;
+}
+
+.dark-mode .post-acciones {
+    color: #fff;
+}
+
+.dark-mode .post:hover {
+    background-color: #333;
+    color: #fff;
+}
+
+.dark-mode .post:hover,
+.dark-mode .comentario:hover {
+    background-color: #333;
+    color: #fff;
+}
+
+.dark-mode nav {
+    background-color: #F9F9F9;
+    color: #000;
+}
+
+.dark-mode nav *,
+.dark-mode footer *{
+    color: #333;
+}
+
+.dark-mode aside,
+.dark-mode aside * {
+    color: #000;
+}
+
+.dark-mode .display-1,
+.dark-mode .display-2,
+.dark-mode .display-3 {
+    box-shadow: none;   
+}
+
+.dark-mode article.blog-post > *,
+.dark-mode .contenido-entrada > *{
+    color: #000;
+}
+
+.dark-mode #blog-post-contenido {
+    color: #fff;
+}
+
+.dark-mode #box-libros-busqueda article a, 
+.dark-mode #box-usuarios-busqueda article a h3 {
+    color: #000;
+}
+
+.dark-mode .underline-morado,
+.dark-mode .underline-verde,
+.dark-mode .underline-azul,
+.dark-mode .underline-rojo,
+.dark-mode .underline-amarillo {
+    box-shadow: none;
+}
+
+.dark-mode .bg-hover-verde {    
+    background: none;
+}
+
+#swal2-title {
+    color: #000;
+}
+
+#box-usuarios-busqueda > article * {
+    color: #000;
+}

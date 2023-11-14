@@ -1,0 +1,564 @@
+# SOME DESCRIPTIVE TITLE.
+# Copyright (C) YEAR THE PACKAGE'S COPYRIGHT HOLDER
+# This file is distributed under the same license as the PACKAGE package.
+# FIRST AUTHOR <EMAIL@ADDRESS>, YEAR.
+#
+#, fuzzy
+msgid ""
+msgstr ""
+"Project-Id-Version: PACKAGE VERSION\n"
+"Report-Msgid-Bugs-To: \n"
+"POT-Creation-Date: 2023-05-26 01:00+0200\n"
+"PO-Revision-Date: YEAR-MO-DA HO:MI+ZONE\n"
+"Last-Translator: FULL NAME <EMAIL@ADDRESS>\n"
+"Language-Team: LANGUAGE <LL@li.org>\n"
+"Language: \n"
+"MIME-Version: 1.0\n"
+"Content-Type: text/plain; charset=UTF-8\n"
+"Content-Transfer-Encoding: 8bit\n"
+
+#: .\myapp\forms.py:17 .\myapp\forms.py:51
+msgid "15 caracteres o menos. Letras solamente."
+msgstr "15 caràcters o menys. Lletres solament."
+
+#: .\myapp\forms.py:18
+msgid "Nombre"
+msgstr "Nom"
+
+#: .\myapp\forms.py:18 .\myapp\forms.py:53
+msgid "Requerido. 30 caracteres o menos."
+msgstr "Requerit. 30 caràcters o menys."
+
+#: .\myapp\forms.py:19
+#, fuzzy
+#| msgid "Cambiar contraseña"
+msgid "Contraseña"
+msgstr "Canvia contrasenya"
+
+#: .\myapp\forms.py:19
+msgid ""
+"Requerido. 8 caracteres o más. No puede ser una contraseña común o parecida."
+msgstr ""
+"Requerit. 8 caràcters o més. No pot ser una contrasenya comuna o pareguda."
+
+#: .\myapp\forms.py:20
+#, fuzzy
+#| msgid "Cambiar contraseña"
+msgid "Confirmar contraseña"
+msgstr "Canvia contrasenya"
+
+#: .\myapp\forms.py:20
+msgid "Requerido. Introduzca la misma contraseña que antes."
+msgstr "Requerit. Introdueix la mateixa contrasenya que abans."
+
+#: .\myapp\forms.py:55
+#, fuzzy
+#| msgid "Requerido. Introduzca la misma contraseña que antes."
+msgid "Requerido. Introduzca una dirección de correo válida."
+msgstr "Requerit. Introdueix la mateixa contrasenya que abans."
+
+#: .\myapp\forms.py:58
+#, fuzzy
+#| msgid "Requerido. 30 caracteres o menos."
+msgid "500 caracteres o menos."
+msgstr "Requerit. 30 caràcters o menys."
+
+#: .\myapp\templates\404.html:4
+msgid "Pagina no encontrada"
+msgstr "Pagina no trobada"
+
+#: .\myapp\templates\404.html:8
+msgid "La pagina que buscas no existe :("
+msgstr "La pagina que busques no existeix :("
+
+#: .\myapp\templates\blog\blog.html:20
+msgid "Leer más"
+msgstr "Llegir més"
+
+#: .\myapp\templates\busqueda.html:4
+msgid "Busqueda"
+msgstr "Busqueda"
+
+#: .\myapp\templates\change_password.html:4 .\myapp\templates\edituser.html:4
+#: .\myapp\templates\layouts\base.html:99 .\myapp\templates\user.html:44
+msgid "Editar perfil"
+msgstr "Editar perfil"
+
+#: .\myapp\templates\change_password.html:9
+#: .\myapp\templates\change_password.html:15 .\myapp\templates\edituser.html:68
+msgid "Cambiar contraseña"
+msgstr "Canvia contrasenya"
+
+#: .\myapp\templates\change_password.html:10
+msgid "La sesión se cerrará al cambiar la contraseña"
+msgstr "La sessió es tancarà en canviar la contrasenya"
+
+#: .\myapp\templates\edituser.html:62
+msgid "Guardar"
+msgstr "Desa"
+
+#: .\myapp\templates\edituser.html:69
+msgid "Formulario cambiar contraseña"
+msgstr "Formulari canviar contrasenya"
+
+#: .\myapp\templates\edituser.html:73
+msgid "Solicitar perfil de escritor"
+msgstr "Sol·licitar perfil d'escriptor"
+
+#: .\myapp\templates\edituser.html:74
+msgid "Revisaremos tu perfil para ver si cumples con los requisitos"
+msgstr "Revisarem el teu perfil per veure si compleixes els requisits"
+
+#: .\myapp\templates\edituser.html:75
+msgid "Las ventajas del perfil de escritor son:"
+msgstr "Els avantatges del perfil descriptor són:"
+
+#: .\myapp\templates\edituser.html:77
+msgid "Poder añadir tus libros a tu perfil."
+msgstr "Poder afegir els teus llibres al teu perfil."
+
+#: .\myapp\templates\edituser.html:78
+msgid "Promoción de tus libros en la web."
+msgstr "Promoció dels teus llibres a la web"
+
+#: .\myapp\templates\edituser.html:79
+msgid "Mejor soporte tecnico."
+msgstr "Millor suport tecnic."
+
+#: .\myapp\templates\edituser.html:82
+msgid "Solicitar"
+msgstr "Sol·licitar"
+
+#: .\myapp\templates\edituser.html:90
+msgid "Noche/día"
+msgstr "Nit/dia"
+
+#: .\myapp\templates\edituser.html:94 .\myapp\templates\edituser.html:96
+msgid "Eliminar cuenta"
+msgstr "Eliminar compte"
+
+#: .\myapp\templates\edituser.html:95
+msgid "¡Cuidado! Tu cuenta será eliminada de forma irreversible"
+msgstr "Compte! El teu compte serà eliminat de forma irreversible"
+
+#: .\myapp\templates\explore.html:6 .\myapp\templates\layouts\base.html:71
+msgid "Explorar"
+msgstr "Explorar"
+
+#: .\myapp\templates\explore.html:38
+msgid "Romance"
+msgstr "Romàntic"
+
+#: .\myapp\templates\explore.html:39
+msgid "Terror"
+msgstr "Terror"
+
+#: .\myapp\templates\explore.html:40
+#, fuzzy
+#| msgid "Aventuras"
+msgid "Aventura"
+msgstr "Aventures"
+
+#: .\myapp\templates\explore.html:41
+msgid "Infantil"
+msgstr "Infantil"
+
+#: .\myapp\templates\explore.html:42
+msgid "Aventuras"
+msgstr "Aventures"
+
+#: .\myapp\templates\explore.html:77
+msgid "Generos"
+msgstr "Gèneres"
+
+#: .\myapp\templates\followers.html:7 .\myapp\templates\user.html:43
+#, fuzzy
+#| msgid "Seguidos"
+msgid "Seguidores"
+msgstr "Seguits"
+
+#: .\myapp\templates\followers.html:8
+msgid "Solo tu puedes ver esta página"
+msgstr "Solament tu pots veure aquesta pàgina"
+
+#: .\myapp\templates\followers.html:12
+#, fuzzy
+#| msgid "Seguidos"
+msgid "Seguidores:"
+msgstr "Seguits"
+
+#: .\myapp\templates\followers.html:16
+msgid "Este usuario no tiene seguidores."
+msgstr "Aquest usuari no té seguidors."
+
+#: .\myapp\templates\followers.html:31
+#, fuzzy
+#| msgid "Seguidos"
+msgid "Seguidos:"
+msgstr "Seguits:"
+
+#: .\myapp\templates\followers.html:35
+msgid "Este usuario no sigue a nadie"
+msgstr "Aquest usuari no segueix a ningú"
+
+#: .\myapp\templates\followers.html:43 .\myapp\templates\user.html:36
+msgid "Dejar de seguir"
+msgstr "Deixar de seguir"
+
+#: .\myapp\templates\grupo.html:21
+#, fuzzy
+#| msgid "Dejar:"
+msgid "Dejar"
+msgstr "Deixar"
+
+#: .\myapp\templates\grupo.html:22 .\myapp\templates\grupos.html:25
+msgid "Miembros:"
+msgstr "Membres:"
+
+#: .\myapp\templates\grupo.html:27
+msgid "Crear post"
+msgstr "Crear post"
+
+#: .\myapp\templates\grupo.html:32 .\myapp\templates\index.html:63
+#: .\myapp\templates\newPostForm.html:19
+msgid "¿Que estás pensando?"
+msgstr "Què estàs pensant?"
+
+#: .\myapp\templates\grupos.html:4 .\myapp\templates\grupos.html:7
+#: .\myapp\templates\index.html:9 .\myapp\templates\layouts\base.html:73
+#: .\myapp\templates\user.html:58
+msgid "Grupos"
+msgstr "Grups"
+
+#: .\myapp\templates\grupos.html:8
+msgid "Unete a una comunidad de personas con tus mismos intereses que tu."
+msgstr "Uneix-te a una comunitat de persones amb els mateixos interessos que tu."
+"Uneix-te a una comunitat de persones amb els mateixos interessos que tu."
+
+#: .\myapp\templates\grupos.html:12
+msgid "Al unirte a uno de los grupos estaras aceptando las"
+msgstr "En unir-te a un dels grups estaràs acceptant les"
+
+#: .\myapp\templates\grupos.html:12
+msgid "reglas de los grupos"
+msgstr "regles dels grups"
+
+#: .\myapp\templates\grupos.html:12
+msgid "de Bookly"
+msgstr "de Bookly"
+
+#: .\myapp\templates\grupos.html:28
+#, fuzzy
+#| msgid "Grupos"
+msgid "Ver grupos"
+msgstr "Grupos"
+
+#: .\myapp\templates\grupos.html:30
+msgid "+ Unirme"
+msgstr "+ Unir-me"
+
+#: .\myapp\templates\gruposRules.html:7
+msgid "Reglas de los grupos"
+msgstr "Regles dels grups"
+
+#: .\myapp\templates\index.html:16
+#, fuzzy
+#| msgid "Grupos"
+msgid "Ver todos"
+msgstr "Grupos"
+
+#: .\myapp\templates\index.html:21 .\myapp\templates\user.html:91
+msgid "Listas"
+msgstr "Les meves llistes"
+
+#: .\myapp\templates\index.html:23 .\myapp\templates\user.html:93
+msgid "Leídos"
+msgstr "Llegits"
+
+#: .\myapp\templates\index.html:28 .\myapp\templates\listas.html:42
+#: .\myapp\templates\user.html:98
+msgid "Leyendo"
+msgstr "Llegint"
+
+#: .\myapp\templates\index.html:33 .\myapp\templates\listas.html:12
+#: .\myapp\templates\user.html:103
+msgid "Por leer"
+msgstr "Per llegir"
+
+#: .\myapp\templates\index.html:44
+msgid "Bienvenido"
+msgstr "Benvingut"
+
+#: .\myapp\templates\index.html:51
+msgid "No hay tendencias por ahora."
+msgstr "No hi ha tendències per ara."
+
+#: .\myapp\templates\indexNoAuth.html:6
+#, fuzzy
+#| msgid "Bookly: Aplicación web para aficionados a la lectura"
+msgid "Bookly: aplicación web para aficionados a la lectura."
+msgstr "Bookly: Aplicació web per a aficionats a la lectura"
+
+#: .\myapp\templates\indexNoAuth.html:10
+msgid "Libros, escritores y lectores, <br> en un mismo sitio."
+msgstr "Llibres, escriptors i lectors, <br> en un mateix lloc."
+
+#: .\myapp\templates\indexNoAuth.html:14
+msgid "Compartir y descubrir"
+msgstr "Compartir i descobrir"
+
+#: .\myapp\templates\indexNoAuth.html:15
+msgid "tus proximas aventuras."
+msgstr "les teues properes aventures."
+
+#: .\myapp\templates\indexNoAuth.html:18
+msgid "Conocer"
+msgstr "Conèixer"
+
+#: .\myapp\templates\indexNoAuth.html:19
+msgid "a tus escritores y escritoras favoritos."
+msgstr "als teus escriptors i escriptores favorits."
+
+#: .\myapp\templates\indexNoAuth.html:22
+#, fuzzy
+#| msgid "+ Unirme"
+msgid "Unirte"
+msgstr "+ Unir-me"
+
+#: .\myapp\templates\indexNoAuth.html:23
+msgid "a grupos tematicos con otros usuarios."
+msgstr "a grups temàtics amb altres usuaris."
+
+#: .\myapp\templates\layouts\base.html:87
+msgid "Nuevo"
+msgstr "Nou"
+
+#: .\myapp\templates\layouts\base.html:90
+msgid "Perfil"
+msgstr "Perfil"
+
+#: .\myapp\templates\layouts\base.html:93
+msgid "Seguidos"
+msgstr "Seguits"
+
+#: .\myapp\templates\layouts\base.html:96 .\myapp\templates\listas.html:4
+msgid "Mis listas"
+msgstr "Les meues llistes"
+
+#: .\myapp\templates\layouts\base.html:103 .\myapp\templates\ranking.html:4
+#: .\myapp\templates\ranking.html:9
+msgid "Ranking"
+msgstr "Classificació"
+
+#: .\myapp\templates\layouts\base.html:106
+msgid "Blog"
+msgstr "Blog"
+
+#: .\myapp\templates\layouts\base.html:108
+#, fuzzy
+#| msgid "Iniciar sesión"
+msgid "Cerrar sesión"
+msgstr "Inicia sessió"
+
+#: .\myapp\templates\layouts\base.html:127 .\myapp\templates\register.html:20
+msgid "Registrarse"
+msgstr "Registrar-se"
+
+#: .\myapp\templates\layouts\base.html:128 .\myapp\templates\login.html:19
+#: .\myapp\templates\register.html:24
+msgid "Iniciar sesión"
+msgstr "Inicia sessió"
+
+#: .\myapp\templates\layouts\show_notifications.html:8
+#: .\myapp\templates\notifications.html:22
+#, fuzzy
+#| msgid "te ha seguido"
+msgid "te ha mencionado"
+msgstr "t'ha seguit"
+
+#: .\myapp\templates\layouts\show_notifications.html:12
+#: .\myapp\templates\notifications.html:26
+msgid "ha comentado tu publicación"
+msgstr "ha comentat la teua publicació"
+
+#: .\myapp\templates\layouts\show_notifications.html:16
+#: .\myapp\templates\notifications.html:30
+msgid "te ha seguido"
+msgstr "t'ha seguit"
+
+#: .\myapp\templates\layouts\show_notifications.html:23
+msgid "No tienes notificaciones :("
+msgstr "No tens notificacions :("
+
+#: .\myapp\templates\libro.html:4
+msgid "Libro"
+msgstr "Llibre"
+
+#: .\myapp\templates\libro.html:21
+msgid "Agregar a tus listas"
+msgstr "Afegir a les teues llistes"
+
+#: .\myapp\templates\libro.html:31
+#, fuzzy
+#| msgid "+ Por leer"
+msgid "- Por leer"
+msgstr "+ Per llegir"
+
+#: .\myapp\templates\libro.html:33
+msgid "+ Por leer"
+msgstr "+ Per llegir"
+
+#: .\myapp\templates\libro.html:43
+#, fuzzy
+#| msgid "+ Leyendo"
+msgid "- Leyendo"
+msgstr "+ Llegint"
+
+#: .\myapp\templates\libro.html:45
+msgid "+ Leyendo"
+msgstr "+ Llegint"
+
+#: .\myapp\templates\libro.html:55
+#, fuzzy
+#| msgid "Leídos"
+msgid "- Leído"
+msgstr "Llegits"
+
+#: .\myapp\templates\libro.html:57
+#, fuzzy
+#| msgid "Leídos"
+msgid "+ Leído"
+msgstr "Llegits"
+
+#: .\myapp\templates\libro.html:69
+#, fuzzy
+#| msgid "Reglas de los grupos"
+msgid "Reseñas de usuarios"
+msgstr "Regles dels grups"
+
+#: .\myapp\templates\libro.html:84
+msgid "Enviar"
+msgstr "Enviar"
+
+#: .\myapp\templates\listas.html:7
+#, fuzzy
+#| msgid "Mis listas"
+msgid "Tus listas"
+msgstr "Les meues llistes"
+
+#: .\myapp\templates\listas.html:27
+#, fuzzy
+#| msgid "Seguidos"
+msgid "Leidos"
+msgstr "Seguits"
+
+#: .\myapp\templates\login.html:4 .\myapp\templates\login.html:8
+msgid "Login"
+msgstr "Inicia sessió"
+
+#: .\myapp\templates\login.html:9
+msgid "Ingresa tus datos para iniciar sesión"
+msgstr "Introdueix les teues dades per a iniciar sessió"
+
+#: .\myapp\templates\login.html:23
+msgid "¿No tienes una cuenta?"
+msgstr "No tens un compte?"
+
+#: .\myapp\templates\login.html:23
+msgid "Registrate"
+msgstr "Registra't"
+
+#: .\myapp\templates\newPostForm.html:4 .\myapp\templates\newPostForm.html:10
+#, fuzzy
+#| msgid "Crear post"
+msgid "Nuevo post"
+msgstr "Crear post"
+
+#: .\myapp\templates\notifications.html:5
+#: .\myapp\templates\notifications.html:10
+msgid "Notificaciones"
+msgstr "Notificacions"
+
+#: .\myapp\templates\post.html:32
+msgid "Comentarios"
+msgstr "Comentaris"
+
+#: .\myapp\templates\post.html:35
+msgid "Escribe un comentrio"
+msgstr "Escriu un comentari"
+
+#: .\myapp\templates\ranking.html:10
+msgid "Usuarios con más reseñas"
+msgstr "Usuaris amb més ressenyes"
+
+#: .\myapp\templates\ranking.html:30
+#, fuzzy
+#| msgid "Cambiar contraseña"
+msgid "reseñas"
+msgstr "Canvia contrasenya"
+
+#: .\myapp\templates\ranking.html:36
+msgid "Usuarios con más libros leidos"
+msgstr "Usuaris amb més llibres llegits"
+
+#: .\myapp\templates\ranking.html:56
+#, fuzzy
+#| msgid "Leídos"
+msgid "leídos"
+msgstr "Llegits"
+
+#: .\myapp\templates\register.html:4 .\myapp\templates\register.html:8
+msgid "Registro"
+msgstr "Registrar-se"
+
+#: .\myapp\templates\register.html:9
+msgid "Ingresa tus datos para crear una cuenta"
+msgstr "Introdueix les teues dades per a crear un compte"
+
+#: .\myapp\templates\register.html:24
+msgid "¿Ya tienes una cuenta?"
+msgstr "Ja tens un compte?"
+
+#: .\myapp\templates\user.html:38
+msgid "Seguir"
+msgstr "Seguir"
+
+#: .\myapp\templates\user.html:51
+msgid "Se unió el"
+msgstr "Es va unir el"
+
+#~ msgid "Ciencia ficción"
+#~ msgstr "Ciència ficció"
+
+#~ msgid "Sant Jordi"
+#~ msgstr "Sant Jordi"
+
+#~ msgid "le ha gustado tu publicación"
+#~ msgstr "li ha agradat la teua publicació"
+
+#~ msgid "Cumple"
+#~ msgstr "Aniversari"
+
+#~ msgid "Change language"
+#~ msgstr "Canvia idioma"
+
+#~ msgid "Inicio"
+#~ msgstr "Inici"
+
+#~ msgid "Novedades mayo"
+#~ msgstr "Novetats maig"
+
+#~ msgid "Categorias"
+#~ msgstr "Categories"
+
+#~ msgid "+ Leido"
+#~ msgstr "+ Llegit"
+
+#, fuzzy
+#~| msgid "Mis listas"
+#~ msgid "Listas de"
+#~ msgstr "Les meues llistes"
+
+#
+#~ msgid "Los más leídos"
+#~ msgstr "Els més llegits"

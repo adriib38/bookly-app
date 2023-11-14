@@ -1,0 +1,25 @@
+{% extends "layouts/base.html" %}
+{% load static %}
+{% load i18n %}
+{% block title %}Blog{% endblock %}
+
+{% block content %}
+
+<div class="centrado">
+    <h1>BooklyBlog</h1>
+
+    <section id="box-blog-posts">
+        {% for post in blogposts %}
+            <article class="blog-post">
+                {% if post.image %}
+                    <img src="{{ post.image.url }}" alt="Imagen del post {{ post.title }}">
+                {% endif %}
+                <h2>{{ post.title }}</h2>
+                <p>{{ post.created_at }}</p>
+                <p>{{ post.author }}</p>
+                <a href="{% url 'postBlog' post.id %}">{% trans "Leer más" %}</a>
+            </article>
+        {% endfor %}
+    </section>
+</div>
+{% endblock %}

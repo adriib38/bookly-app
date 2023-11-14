@@ -1,0 +1,26 @@
+{% extends "layouts/base.html" %}
+{% load i18n %}
+
+{% block title %}{% trans "Login" %}{% endblock %}
+
+{% block content %}
+    <div id="page-login">
+        <h1>{% trans "Login" %}</h1>
+        <p>{% trans "Ingresa tus datos para iniciar sesión" %}</p>
+
+        <form action="{% url 'signin' %}" method="POST" id="login">
+            {% csrf_token %}
+            {{ form.as_p }}
+
+            {% if error %}
+                <p class="auth-error">{{ error }}</p>
+            {% endif %}
+
+            <button>{% trans "Iniciar sesión" %}</button>    
+
+        </form>
+
+        <p>{% trans "¿No tienes una cuenta?" %} <a href="{% url 'signup' %}">{% trans "Registrate" %}</a></p>
+    </div>
+
+{% endblock %}

@@ -1,0 +1,137 @@
+{% extends "layouts/base.html" %}
+
+{% load static %}
+{% load i18n %}
+
+{% block title %}{% trans "Explorar" %}{% endblock %}
+
+{% block content %}
+
+<div class="container-slider">
+    <div class="slider" id="slider">
+        <div class="slider__section">
+            <a href="">
+                <img src="{% static 'imgs/banners/recomendaciones-junio.png' %}" alt="" class="slider__img">
+            </a>
+        </div>    
+        <div class="slider__section">
+            <a href="{% url 'groups' %}">
+                <img src="{% static 'imgs/banners/grupos.png' %}" alt="" class="slider__img">
+            </a>
+        </div>         
+        <div class="slider__section">
+            <a href="#horror">
+                <img src="{% static 'imgs/banners/terror.png' %}" alt="" class="slider__img">
+            </a>
+        </div>
+        <div class="slider__section">
+            <a href="#kids">
+                <img src="{% static 'imgs/banners/para-pequenyos.png' %}" alt="" class="slider__img">
+            </a>
+        </div>
+    </div>
+    <div class="slider__btn slider__btn--right" id="btn-right">&#62;</div>
+    <div class="slider__btn slider__btn--left" id="btn-left">&#60;</div>
+</div>
+
+<div id="enlaces-categorias">
+    <a href="#romance">{% trans "Romance" %}</a>
+    <a href="#horror">{% trans "Terror" %}</a>
+    <a href="#adventure">{% trans "Aventura" %}</a>
+    <a href="#kids">{% trans "Infantil" %}</a>
+    <a href="#adventure">{% trans "Aventuras" %}</a>
+</div>
+
+<!-- Secciones -->
+<div id="explorar-secciones">
+    <section>
+        <h3 class="placeholder"></h3>
+        <div class="card-deck">
+            <article class="placeholder card"></article>
+            <article class="placeholder card"></article>
+        </div>
+    </section>
+    <section>
+        <h3 class="placeholder"></h3>
+        <div class="card-deck">
+            <article class="placeholder card"></article>
+            <article class="placeholder card"></article>
+        </div>
+    </section>
+    <section>
+        <h3 class="placeholder"></h3>
+        <div class="card-deck">
+            <article class="placeholder card"></article>
+            <article class="placeholder card"></article>
+        </div>
+    </section>
+    <section>
+        <h3 class="placeholder"></h3>
+        <div class="card-deck">
+            <article class="placeholder card"></article>
+            <article class="placeholder card"></article>
+        </div>
+    </section>
+</div>
+
+<h2 id="titulo-generos" class="">{% trans "Generos" %}</h2>
+<div id="explorar-generos">
+    <section>
+        <h3 class="placeholder"></h3>
+        <div class="card-deck">
+            <article class="placeholder card"></article>
+            <article class="placeholder card"></article>
+            <article class="placeholder card"></article>
+            <article class="placeholder card"></article>
+            <article class="placeholder card"></article>
+            <article class="placeholder card"></article>
+        </div>
+    </section>
+    <section>
+        <h3 class="placeholder"></h3>
+        <div class="card-deck">
+            <article class="placeholder card"></article>
+            <article class="placeholder card"></article>
+            <article class="placeholder card"></article>
+            <article class="placeholder card"></article>
+            <article class="placeholder card"></article>
+            <article class="placeholder card"></article>
+        </div>
+    </section>
+    <section>
+        <h3 class="placeholder"></h3>
+        <div class="card-deck">
+            <article class="placeholder card"></article>
+            <article class="placeholder card"></article>
+            <article class="placeholder card"></article>
+            <article class="placeholder card"></article>
+            <article class="placeholder card"></article>
+            <article class="placeholder card"></article>
+        </div>
+    </section>
+    <section>
+        <h3 class="placeholder"></h3>
+        <div class="card-deck">
+            <article class="placeholder card"></article>
+            <article class="placeholder card"></article>
+            <article class="placeholder card"></article>
+            <article class="placeholder card"></article>
+            <article class="placeholder card"></article>
+            <article class="placeholder card"></article>
+        </div>
+    </section>
+</div>
+
+<script src="https://cdnjs.cloudflare.com/ajax/libs/js-cookie/3.0.0/js.cookie.min.js"></script>
+
+<script src="{% static 'js/slider.js' %}"></script>
+<script type="module" src="{% static 'js/explorar.js' %}"></script>
+
+{% endblock %}
+
+{% block footer %}
+    
+{% endblock %}
+
+
+ 

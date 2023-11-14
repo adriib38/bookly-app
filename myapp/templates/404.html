@@ -1,0 +1,9 @@
+{% extends "layouts/base.html" %}
+{% load i18n %}
+
+{% block title %}{% trans "Pagina no encontrada" %}{% endblock %}
+
+{% block content %}
+    <h1>404</h1>
+    <p>{% trans "La pagina que buscas no existe :(" %}</p>
+{% endblock %}
